@@ -25,24 +25,14 @@ classifier=pickle.load(pickle_in)
 pickle_in_2= open("src/data2pkl.pkl","rb")
 data=pickle.load(pickle_in_2)
 
-#pickle_in_3= open("data.pkl","rb")
-#data2=pickle.load(pickle_in_3)
-# => KO
+pickle_in_3 = open("src/sampler.pkl","rb")
+sampler=pickle.load(pickle_in_3)
 
-#pickle_in_3 = open("transformer.pkl","rb")
-#transformer=pickle.load(pickle_in_3)
+pickle_in_4 = open("src/transformer2.pkl","rb")
+transformer2=pickle.load(pickle_in_4)
 
-#pickle_in_4 = open("logreg.pkl","rb")
-#estimator=pickle.load(pickle_in_4)
-
-pickle_in_5 = open("src/sampler.pkl","rb")
-sampler=pickle.load(pickle_in_5)
-
-pickle_in_6 = open("src/transformer2.pkl","rb")
-transformer2=pickle.load(pickle_in_6)
-
-pickle_in_7 = open("src/logreg2.pkl","rb")
-estimator2=pickle.load(pickle_in_7)
+pickle_in_5 = open("src/logreg2.pkl","rb")
+estimator2=pickle.load(pickle_in_5)
 
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000

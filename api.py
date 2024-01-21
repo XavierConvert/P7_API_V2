@@ -48,8 +48,8 @@ def get_ids() -> dict:
 @app.get("/client_details/{cid}")
 def get_client_detail(cid:int):
     no_nan_data=data.fillna('NA')
-    filtered_data=no_nan_data.loc[no_nan_data['SK_ID_CURR']==cid,:].to_dict()    
-    return filtered_data 
+    filtered_data=no_nan_data.loc[no_nan_data['SK_ID_CURR']==cid,:].T#.to_dict()    
+    return filtered_data.iloc[:,0] 
     
 @app.get('/data/')
 def show_data():
@@ -92,7 +92,7 @@ def shap_value(cid:int):
     return svv.iloc[:,0]
     
     
-#uvicorn api:app --reload    
+# uvicorn api:app --reload   
 
   
 

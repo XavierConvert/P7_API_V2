@@ -23,7 +23,7 @@ def test_show_data():
 
 def test_get_prediction(cid=101077):
     pred=get_predictions(cid)
-    print (type(pred))
+    #print (type(pred))
     print (pred["prediction"])
     print (pred['proba_rembour'])
     assert pred["prediction"]=='Crédit accepté'

@@ -2,7 +2,7 @@ from ..api import get_ids #..src.api
 from ..api import show_data #..src.api
 from ..api import get_client_detail
 from ..api import get_predictions
-import pandas as pd
+#import pandas as pd
 
 def test_get_ids():
     ids = get_ids()
@@ -23,7 +23,7 @@ def test_show_data():
 
 def test_get_prediction(cid=101077):
     pred=get_predictions(cid)
-    print (type(pred))
+    #print (type(pred))
     print (pred["prediction"])
     print (pred['proba_rembour'])
     assert pred["prediction"]=='Crédit accepté'

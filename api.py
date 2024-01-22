@@ -12,7 +12,7 @@ import json
 from pydantic import BaseModel
 #from sklearn.model_selection import train_test_split
 import shap
-shap.initjs()
+#shap.initjs()
 
     
 # 2. Create the app object

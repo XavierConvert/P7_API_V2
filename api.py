@@ -5,7 +5,7 @@ from fastapi import FastAPI #, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 #from credit import Credit #, Client
-import pickle
+#import pickle
 import pandas as pd
 import numpy as np
 import json
@@ -19,19 +19,24 @@ import shap
 app = FastAPI()
 
 pickle_in = open("src/classifier.pkl","rb")
-classifier=pickle.load(pickle_in)
+classifier=pd.read_pickle(pickle_in)
+#classifier=pickle.load(pickle_in)
 
 pickle_in_2= open("src/data2pkl.pkl","rb")
-data=pickle.load(pickle_in_2)
+data=pd.read_pickle(pickle_in_2)
+#data=pickle.load(pickle_in_2)
 
 pickle_in_3 = open("src/sampler.pkl","rb")
-sampler=pickle.load(pickle_in_3)
+sampler=pd.read_pickle(pickle_in_3)
+#sampler=pickle.load(pickle_in_3)
 
 pickle_in_4 = open("src/transformer2.pkl","rb")
-transformer2=pickle.load(pickle_in_4)
+transformer2=pd.read_pickle(pickle_in_4)
+#transformer2=pickle.load(pickle_in_4)
 
 pickle_in_5 = open("src/logreg2.pkl","rb")
-estimator2=pickle.load(pickle_in_5)
+estimator2=pd.read_pickle(pickle_in_5)
+#estimator2=pickle.load(pickle_in_5)
 
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000

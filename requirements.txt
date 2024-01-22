@@ -1,6 +1,5 @@
 fastapi
 uvicorn
-pickle
 pandas
 numpy
 json

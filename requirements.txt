@@ -6,3 +6,4 @@ pydantic
 shap
 matplotlib
 ipython
+imbalanced-learn

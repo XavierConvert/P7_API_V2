@@ -2,11 +2,11 @@
 
 Within DS/P7 project, repo dedicated to API (FastAPI)
 
-#### Description ####
+## Description ##
 
 In this Repo, you will find:
 
-## api.py ##
+#### api.py ####
 
 Python script to launch a FastAPI API including several path in order to get:
 
@@ -16,16 +16,16 @@ Python script to launch a FastAPI API including several path in order to get:
 - prediction (crédit accepté ou refusé) + predict_proba (acceptance threshold = 0.35)
 - shap value
 
-## src ##
+#### src ####
 
 Several pkl files used within API 
 
-## test_api.py ##
+#### test_api.py ####
 
 Several test cases to be run with pytest
 
 
-#### Installation ####
+## Installation ##
 
 Through conda / .venv environment launch pip install -f requirement.txt
 

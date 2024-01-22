@@ -3,11 +3,15 @@ from ..api import show_data #..src.api
 from ..api import get_client_detail
 from ..api import get_predictions
 #import pandas as pd
+import logging
+
+logging.basicConfig(filename='test.log', level=logging.DEBUG) #, format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S' )
 
 def test_get_ids():
     ids = get_ids()
     print(f'le dataset contient {len(ids.values())} ids')
-    assert len(ids.values()) >= 1
+    logging.debug(msg='1er essai log')
+    assert len(ids.values()) == 1
     
 def test_client_details(cid=101077):
     data = get_client_detail(cid)
@@ -28,3 +32,4 @@ def test_get_prediction(cid=101077):
     print (pred['proba_rembour'])
     assert pred["prediction"]=='Crédit accepté'
     assert pred['proba_rembour']==0.49
+    

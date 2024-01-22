@@ -2,6 +2,5 @@ fastapi
 uvicorn
 pandas
 numpy
-json
 pydantic
 shap

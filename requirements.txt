@@ -5,3 +5,4 @@ numpy
 pydantic
 shap
 matplotlib
+ipython

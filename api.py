@@ -5,7 +5,7 @@ from fastapi import FastAPI #, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 #from credit import Credit #, Client
-#import pickle
+import pickle
 import pandas as pd
 import numpy as np
 import json
@@ -19,8 +19,8 @@ import shap
 app = FastAPI()
 
 pickle_in = open("src/classifier.pkl","rb")
-classifier=pd.read_pickle(pickle_in)
-#classifier=pickle.load(pickle_in)
+#classifier=pd.read_pickle(pickle_in)
+classifier=pickle.load(pickle_in)
 
 pickle_in_2= open("src/data2pkl.pkl","rb")
 data=pd.read_pickle(pickle_in_2)

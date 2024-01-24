@@ -7,3 +7,4 @@ shap
 #matplotlib
 ipython
 imbalanced-learn
+scikit-learn == 1.0.2

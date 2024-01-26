@@ -19,8 +19,8 @@ import shap
 app = FastAPI()
 
 pickle_in = open("src/classifier.pkl","rb")
-#classifier=pd.read_pickle(pickle_in)
-classifier=pickle.load(pickle_in)
+classifier=pd.read_pickle(pickle_in)
+#classifier=pickle.load(pickle_in)
 
 pickle_in_2= open("src/data2pkl.pkl","rb")
 data=pd.read_pickle(pickle_in_2)

@@ -1,0 +1,33 @@
+name: auto test while pushing API.py 
+
+on:
+  push:
+    branches:
+      - main
+    
+jobs:  
+    build:
+      runs-on: 'ubuntu-latest'
+        steps:
+          - name: Check out repository code
+            uses: actions/checkout@v3
+          - name : Set-up Python V3.9.13
+            uses: actions/setup-python@v3
+            with:
+              python-version: 3.9.13
+          #- name : Install Dependancies
+          - name: Test with pytest
+            run: |
+              python -m pytest
+
+      
+       # env:
+          # environnement variables
+       # runs-on: # machine OS
+       # steps:
+            # Your installation and setup steps here
+
+            # Testing
+       #     - name: Test with pytest
+       #       run: |
+       #           pytest

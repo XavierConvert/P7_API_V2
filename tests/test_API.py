@@ -15,7 +15,7 @@ def test_get_ids():
     #assert len(ids.values()) >= 1
     
     # test qui ne doit être KO (test CI/GitHub Actions):
-    assert len(ids.values()) ==0
+    assert len(ids.values()) ==1
     
 def test_client_details(cid=101077):
     data = get_client_detail(cid)

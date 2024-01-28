@@ -5,7 +5,7 @@ from ..api import get_predictions
 #import pandas as pd
 #import logging
 
-logging.basicConfig(filename='test.log', level=logging.DEBUG) #, format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S' )
+#logging.basicConfig(filename='test.log', level=logging.DEBUG) #, format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S' )
 
 def test_get_ids():
     ids = get_ids()

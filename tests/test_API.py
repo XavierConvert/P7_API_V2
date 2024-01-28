@@ -12,10 +12,10 @@ def test_get_ids():
     print(f'le dataset contient {len(ids.values())} ids')
     #logging.debug(msg='1er essai log')
     # test qui doit passer
-    #assert len(ids.values()) >= 1
+    assert len(ids.values()) >= 1
     
     # test qui ne doit être KO (test CI/GitHub Actions):
-    assert len(ids.values()) ==1
+    #assert len(ids.values()) ==1
     
 def test_client_details(cid=101077):
     data = get_client_detail(cid)

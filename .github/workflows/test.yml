@@ -19,23 +19,10 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pytest
-#if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-#pip install -e .  
-
-
-
     - name: Test with pytest
       run: |
         pytest #python -m pytest
-
-      
-       # env:
-          # environnement variables
-       # runs-on: # machine OS
-       # steps:
-            # Your installation and setup steps here
-
-            # Testing
-       #     - name: Test with pytest
-       #       run: |
-       #           pytest
+# Ajout suite à session mentorat pour lancer le déploiement uniquement si test OK
+    - name: Deploy
+      # A ne pas faire pour un vrai 'projet'
+      run: wget https://api.render.com/deploy/srv-cmn90v0cmk4c73e6pdeg?key=h1XF5zi1MCg    

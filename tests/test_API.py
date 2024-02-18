@@ -30,9 +30,6 @@ def test_show_data():
                                   'EXT_SOURCE_2','EXT_SOURCE_3','Prev_contract_nb','Prev_AMT_CREDIT','Refused_rate','default_payment','INCOME_CREDIT_PERC','ANNUITY_INCOME_PERC',
                                   'PAYMENT_RATE','client_age','INCOME_PER_PERSON','client_prof_exp','Cash_loans','GENDER_FEMALE','active_client','relationship']
 
-										
-
-
 def test_get_prediction(cid=101400):
     pred=get_predictions(cid)
     #print (type(pred))

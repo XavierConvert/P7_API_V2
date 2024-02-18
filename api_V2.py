@@ -98,13 +98,13 @@ def shap_value(cid:int):
     svv=svv.T
     return svv.iloc[:,0]
         
-# uvicorn api_V2:app --reload   
-   
+# version KO (à suppirmer si confirmé) uvicorn api_V2:app --reload   
+# uvicorn api_V2:api --reload  
 
 
 # 5. Run the API with uvicorn
 #    Will run on http://127.0.0.1:8000
 if __name__ == '__main__':
     #uvicorn.run(api, host='127.0.0.1', port=8000)
-    uvicorn.run(app, host='127.0.0.1', port=8000)
-    
+    # version KO du 18/02/24: uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(api, host='127.0.0.1', port=8000)

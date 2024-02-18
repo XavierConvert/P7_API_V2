@@ -32,7 +32,7 @@ Through conda / .venv environment launch pip install -f requirement.txt
 For API:
 
 Locally:
-In terminal, run uvicorn api:app --reload, API is displayed on http://127.0.0.1:8000
+In terminal, run uvicorn api_V2:api --reload, API is displayed on http://127.0.0.1:8000
 
 Production: https://xavier-convert.onrender.com/
 

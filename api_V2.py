@@ -1,4 +1,3 @@
-
 # 1. Import libraries 
 import uvicorn
 from fastapi import FastAPI #, UploadFile

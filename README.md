@@ -27,7 +27,7 @@ Several test cases to be run with pytest
 
 # Installation
 
-Through conda / .venv environment launch pip install -f requirement.txt
+Through conda / .venv environment launch pip install -r requirements.txt
 
 For API:
 

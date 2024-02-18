@@ -51,7 +51,7 @@ def get_ids() -> dict:
 def get_client_detail(cid:int):
     # NaN in EXT_SOURCE 1,2 and 3 are replaced by 'NA'
     no_nan_data=data.fillna('NA')
-    filtered_data=no_nan_data.loc[no_nan_data['SK_ID_CURR']==cid,:].T#.to_dict()    
+    filtered_data=no_nan_data.loc[no_nan_data['SK_ID_CURR']==cid,:].T   
     return filtered_data.iloc[:,0] 
     
 # 4.3 Display describe() to get an overview of the dataset (to compare a single Id to the whole dataset)

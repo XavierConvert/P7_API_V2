@@ -40,4 +40,6 @@ For tests:
 
 At root level, run pytest in terminal
 
+While pushing a new version, testings are performed automatically. If passed then auto deployment on https://dashboard.render.com/web/srv-cmn90v0cmk4c73e6pdeg
+
 

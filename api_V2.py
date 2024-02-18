@@ -98,7 +98,7 @@ def shap_value(cid:int):
     svv=svv.T
     return svv.iloc[:,0]
         
-# version KO (à suppirmer si confirmé) uvicorn api_V2:app --reload   
+
 # uvicorn api_V2:api --reload  
 
 

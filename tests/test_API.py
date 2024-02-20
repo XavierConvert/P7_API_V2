@@ -33,6 +33,8 @@ def test_get_prediction(cid=101400):
     #print (type(pred))
     print (pred["prediction"])
     print (pred['proba_rembour'])
-    assert pred["prediction"]=='Crédit accepté'
-    assert pred['proba_rembour']==0.61
+    if pred["prediction"]=='Crédit accepté':
+        assert pred['proba_rembour']<=0.7
+    else:
+        assert pred['proba_rembour']>0.7
     

@@ -22,7 +22,7 @@
 
 # 1. Import libraries 
 import uvicorn
-from fastapi import FastAPI #, UploadFile
+from fastapi import FastAPI, Response #, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 import pickle
@@ -67,6 +67,7 @@ data_for_shap=transf_data.drop(['SK_ID_CURR'],axis=1)
 data_for_shap_tr=pd.DataFrame(transformer2.transform(data_for_shap),columns=data_for_shap.columns)
 explainer=shap.Explainer(estimator2,data_for_shap_tr)
 shap_values=explainer(data_for_shap_tr,check_additivity=False)
+#bv=shap_values.base_values
 svv=pd.DataFrame(shap_values.values, columns = data_for_shap.columns).round(2)
 svv['SK_ID_CURR']=transf_data['SK_ID_CURR']  
 #print(f'svv shape = {svv.shape}')
@@ -136,10 +137,13 @@ def shap_value(cid:int):
     ###             => IndexError: single positional indexer is out-of-bounds
     ###        - même si je ne conserve que la partie estimateur ca plante 'IndexError: single positional indexer is out-of-bounds'   
 
+    # 4 lignes suivantes sont OK:
     svv2=svv.loc[svv['SK_ID_CURR']==cid]
     svv2=svv2.drop(['SK_ID_CURR'],axis=1)
     svv2=svv2.T
     return svv2.iloc[:,0]
+
+    #return JSONResponse(content=explainer)
      
 # pour tester en local, depuis le terminal:
 # uvicorn api_V2:api --reload  

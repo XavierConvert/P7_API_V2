@@ -17,18 +17,18 @@ def test_get_ids():
     # test qui ne doit être KO (test CI/GitHub Actions):
     #assert len(ids.values()) ==1
     
-def test_client_details(cid=101400):
+def test_client_details(cid=101402):
     data = get_client_detail(cid)
     print(f'id test = {cid}')
     print(data['AMT_CREDIT'])
-    assert data['AMT_CREDIT']==370629
+    assert data['AMT_CREDIT']==225000
 
 def test_show_data():
     df=show_data()
     print(df.columns.to_list())
     assert len(df.columns.to_list())==25
     
-def test_get_prediction(cid=101400):
+def test_get_prediction(cid=101402):
     pred=get_predictions(cid)
     #print (type(pred))
     print (pred["prediction"])

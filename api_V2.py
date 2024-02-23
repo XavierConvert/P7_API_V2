@@ -143,7 +143,6 @@ def shap_value(cid:int):
     svv2=svv2.T
     return svv2.iloc[:,0]
 
-    #return JSONResponse(content=explainer)
      
 # pour tester en local, depuis le terminal:
 # uvicorn api_V2:api --reload  

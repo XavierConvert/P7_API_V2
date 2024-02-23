@@ -43,7 +43,7 @@ api = FastAPI()
 pkl_1= open("src/best_lgbm2.pkl","rb")
 classifier=pd.read_pickle(pkl_1)
 
-pkl_2= open("src/data2pkl_V2.pkl","rb")
+pkl_2= open("src/data_smpl.pkl","rb")
 data=pd.read_pickle(pkl_2)
 
 pkl_3 = open("src/samplerV2.pkl","rb")

@@ -17,11 +17,11 @@ def test_get_ids():
     # test qui ne doit être KO (test CI/GitHub Actions):
     #assert len(ids.values()) ==1
     
-def test_client_details(cid=101402):
+def test_client_details(cid=101420):
     data = get_client_detail(cid)
     print(f'id test = {cid}')
     print(data['AMT_CREDIT'])
-    assert data['AMT_CREDIT']==225000
+    assert data['AMT_CREDIT']==972000
 
 def test_show_data():
     df=show_data()

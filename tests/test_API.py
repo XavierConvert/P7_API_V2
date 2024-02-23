@@ -28,7 +28,7 @@ def test_show_data():
     print(df.columns.to_list())
     assert len(df.columns.to_list())==25
     
-def test_get_prediction(cid=101402):
+def test_get_prediction(cid=101420):
     pred=get_predictions(cid)
     #print (type(pred))
     print (pred["prediction"])

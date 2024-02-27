@@ -56,7 +56,7 @@ pkl_5 = open("src/est_LGBM.pkl","rb")
 estimator2=pd.read_pickle(pkl_5)
 
 
-# Préparation du dataframe svv (shap_value.values) 'global' qui sera appelé par client id dans la fonction getshap_value(cid:int):
+# 4. Préparation du dataframe svv (shap_value.values) 'global' qui sera appelé par client id dans la fonction getshap_value(cid:int):
 
 filtered_data=data.drop(['AMT_GOODS_PRICE'], axis =1)
 #print(f"nb de NA sur EXT_SRC_1 avant imputation= {filtered_data['EXT_SOURCE_1'].isna().sum()}")
@@ -73,20 +73,20 @@ svv['SK_ID_CURR']=transf_data['SK_ID_CURR']
 #print(f'svv shape = {svv.shape}')
 
 
-## 4. Routes
+## 5. Routes
 
-# 4.1 Index route, opens automatically on http://127.0.0.1:8000
+# 5.1 Index route, opens automatically on http://127.0.0.1:8000
 @api.get('/')
 def index():
     return {'message': 'Hello. API is running'}   
 
-#4.2 Id list (taken from to X_test in ML notebook)
+# 5.2 Id list (taken from to X_test in ML notebook)
 @api.get("/ids/") 
 def get_ids() -> dict:
     ids=data['SK_ID_CURR'].to_dict()
     return ids
     
-#4.3 Client detail calling an Id
+# 5.3 Client detail calling an Id
 @api.get("/client_details/{cid}")
 def get_client_detail(cid:int):
     # NaN in EXT_SOURCE 1,2 and 3 are replaced by 'NA'
@@ -95,13 +95,13 @@ def get_client_detail(cid:int):
     return filtered_data.iloc[:,0] 
     
     
-# 4.4 Display describe() to get an overview of the dataset (to compare a single Id to the whole dataset)
+# 5.4 Display describe() to get an overview of the dataset (to compare a single Id to the whole dataset)
 @api.get('/data/')
 def show_data():
     return data.describe().round(2)
 
 
-# 4.5 Has the credit been accepted or refused (depending of the optimal threshold)
+# 5.5 Has the credit been accepted or refused (depending of the optimal threshold)
 @api.get("/prediction/{cid}")
 def get_predictions(cid:int):
     filtered_data=data.loc[data['SK_ID_CURR']==cid,:]
@@ -123,7 +123,7 @@ def get_predictions(cid:int):
     
     # On pourrait ajouter le gain ou la perte estimée
    
-# 4.6 Get the shap values (features that have the more influence on decision) that will be used in dashboard to display graph      
+# 5.6 Get the shap values (features that have the more influence on decision) that will be used in dashboard to display graph      
 @api.get("/shap_val/{cid}")
 def shap_value(cid:int):
     ### Cette version fonctionne mais pose 1 pb:
@@ -143,7 +143,16 @@ def shap_value(cid:int):
     svv2=svv2.T
     return svv2.iloc[:,0]
 
-     
+    
+    #Ci dessous test evolution shap/explainer:   
+    #svv2=svv2.to_numpy()
+    #return {'values': svv2.tolist(),
+    #        'base_values': float(shap_values[0].base_values),
+    #        'features': data_for_shap.columns.to_list()}
+    
+#Pour activer l'envt virtuel
+#.venv\Scripts\activate.bat
+
 # pour tester en local, depuis le terminal:
 # uvicorn api_V2:api --reload  
 

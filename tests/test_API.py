@@ -2,6 +2,7 @@ from ..api_V2 import get_ids #..src.api
 from ..api_V2 import show_data #..src.api
 from ..api_V2 import get_client_detail
 from ..api_V2 import get_predictions
+from ..api_V2 import shap_value
 #import pandas as pd
 #import logging
 
@@ -38,3 +39,7 @@ def test_get_prediction(cid=101420):
     else:
         assert pred['proba_rembour']<=0.7
     
+def test_shap_val(cid=101420):
+    sv=shap_value(cid)
+    print(len(sv))
+    assert len(sv)==23
